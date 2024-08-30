@@ -1,0 +1,54 @@
+
+:root {
+    --border-color: 210, 210, 210;
+    --background-color: 254, 254, 254;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ebebeb;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #333;
+}
+
+#pane-container {
+    display: flex;
+}
+
+#left-pane {
+    flex: 1;
+    height: 100vh;
+    max-width: 650px;
+    min-width: 400px;
+    border-right: 1px solid rgb(var(--border-color));
+    background-color: #0000000a;
+    padding: 16px;
+}
+
+#right-pane {
+    flex: 1
+}
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgb(var(--border-color));
+}
+
+#right-header {
+    top: 0;
+    position: sticky;
+    border-bottom: 1px solid rgb(var(--border-color));
+    padding: 16px 28px;
+}
