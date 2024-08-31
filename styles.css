@@ -1,8 +1,8 @@
 
 :root {
     color-scheme: light dark;
-    --border-color: light-dark(#fefefe, #545454);
-    --background-color: light-dark(#fefefe, #181818);
+    --border-color: light-dark(#c9c9c9, #545454);
+    --background-color: light-dark(#fefefe, #1b1b1b);
     --text-color: light-dark(#333, #fefefe);
 }
 
@@ -30,7 +30,7 @@ body {
     min-width: 400px;
     border-right-width: 1px;
     border-right-style: solid;
-    background-color: #0000000a;
+    background-color: #00000008;
 }
 
 #right-pane {
@@ -44,7 +44,7 @@ body {
     flex-direction: column;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    background-color: #0000000a;
+    background-color: #00000020;
     padding: 16px;
 }
 
@@ -74,4 +74,45 @@ body {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     padding: 16px 28px;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+}
+
+#skills > * {
+    margin-right: 8px;
+}
+
+#social {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    background-color: #0000000a;
+}
+
+.social-link-icon > a > i {
+    font-size: 32px;
+    color: var(--text-color);
+    margin: 0 8px;
+}
+
+.social-link-icon > a > i:hover {
+    color: lightblue;
+}
+
+.chips {
+    padding: 4px 12px;
+    border-radius: 50px;
+    background-color: rgba(194, 234, 247, 0.186);
+    user-select: none;
+}
+
+.chips > p {
+    margin: 0;
+    color: rgb(224, 241, 247)
 }

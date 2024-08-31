@@ -1,3 +1,4 @@
+
 // type alias sleep so we can actually sleep in stupid javascript
 async function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -19,6 +20,8 @@ async function typeWriterAnimation(element, text) {
     }
 }
 
+// simple function cycling a list of titles
+// with the typewriter effect
 async function cycleTitles() {
     const element = document.getElementById("title");
     const titles = [
@@ -49,4 +52,14 @@ async function cycleTitles() {
     const [left, right] = await Promise.all([responses[0].json(), responses[1].json()]);
 
     typeWriterAnimation(document.getElementById("description"), left.description);
+
+    for (let skill of right.skills) {
+        const div = document.createElement("div");
+        const p = document.createElement("p");
+        p.innerText = skill.name;
+
+        div.appendChild(p);
+        div.classList.add("chips");
+        document.getElementById("skills").appendChild(div);
+    }
 })();
