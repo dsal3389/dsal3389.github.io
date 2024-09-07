@@ -1,3 +1,91 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+    font-family: eightbit;
+    src: url("/assets/eightbit.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: eightbit;
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
+
+#social {
+    top: 24px;
+    height: 52px;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.343);
+    transform: translateX(-50%);
+    border: 1px solid black;
+    padding: 8px;
+    left: 50%;
+    z-index: 1000;
+    backdrop-filter: blur(16px);
+}
+
+#scene-1 {
+    height: 100vh;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+#scene-1-info {
+    width: 700px;
+    margin: auto;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#scene-1-img {
+    width: 220px;
+    height: 220px;
+    border: 2px solid black;
+}
+
+#scene-2 {
+
+}
+
+#scene-2-info {
+    padding: 128px 16px 32px 16px;
+}
+
+#scene-3 {
+    overflow-x: hidden;
+}
+
+#scene-3-skills {
+    padding: 0 16px;
+    margin: auto;
+}
+
+.scene-3-skill {
+    width: 100%;
+    padding: 8px 16px;
+    margin: 16px 0;
+    border: 1px solid black;
+    transform: translateX(-100%);
+}
+
+.scroll-center-content-wrapper {
+    max-width: 700px;
+    margin: auto;
+}
+
+.terminal {
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.terminal > p {
+    margin: 0;
+}
