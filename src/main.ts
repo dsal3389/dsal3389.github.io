@@ -20,7 +20,7 @@ async function typeWriter(element: HTMLParagraphElement | HTMLSpanElement, strin
       await sleep(100);
     }
 
-    await sleep(500);
+    await sleep(1000);
     if (index >= strings.length) {
       index = 0;
     } 
@@ -46,7 +46,7 @@ anime({
     { translateY: 0 }
   ],
   easing: 'easeInOutQuad',
-  duration: 4500,
+  duration: 5500,
   loop: true
 });
 
@@ -61,10 +61,18 @@ let skillAnimation = anime({
   autoplay: false,
 });
 
+let scene4Terminal = anime({
+  target: "#scene-4-box",
+  height: [0, 100],
+  duration: 4000,
+  autoplay: false,
+});
+
 // define scroll margic scenes ---
 
 let controller = new ScrollMagic.Controller();
 
+// scene 2
 new ScrollMagic.Scene({
   triggerElement: "#scene-2",
   triggerHook: "onLeave",
@@ -73,12 +81,25 @@ new ScrollMagic.Scene({
 .setPin("#scene-2-info")
 .addTo(controller);
 
+// scene 3
 new ScrollMagic.Scene({
   triggerElement: "#scene-3",
   offset: 400,
   duration: 1500
-}).on("progress", (event) => {
+})
+.on("progress", (event) => {
   skillAnimation.seek(skillAnimation.duration * event.progress);
 })
 .setPin("#scene-3-skills")
+.addTo(controller);
+
+// scene 4
+new ScrollMagic.Scene({
+  triggerElement: "#scene-4",
+})
+.on("progress", (event) => {
+  console.log(event)
+  scene4Terminal.seek(scene4Terminal.duration * event.progress);
+})
+.setPin("#scene-4-box")
 .addTo(controller);
