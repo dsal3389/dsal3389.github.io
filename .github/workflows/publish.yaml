@@ -1,0 +1,23 @@
+name: dsal3389.github.io
+on:
+  push:
+    branches:
+      - master
+jobs:
+  create_upload_branch:
+    name: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: configure git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: install npm deps
+        run: npm install
+      - name: build
+        run: npm run build
+      - name: publish
+        run: npm run deploy

@@ -5,7 +5,6 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-
 async function typeWriter(element: HTMLParagraphElement | HTMLSpanElement, strings: String[]) {
   let index = 0;
 
@@ -61,13 +60,6 @@ let skillAnimation = anime({
   autoplay: false,
 });
 
-let scene4Terminal = anime({
-  target: "#scene-4-box",
-  height: [0, 100],
-  duration: 4000,
-  autoplay: false,
-});
-
 // define scroll margic scenes ---
 
 let controller = new ScrollMagic.Controller();
@@ -87,19 +79,8 @@ new ScrollMagic.Scene({
   offset: 400,
   duration: 1500
 })
-.on("progress", (event) => {
-  skillAnimation.seek(skillAnimation.duration * event.progress);
+.on<ScrollMagic.ProgressEvent>("progress", (event) => {
+  skillAnimation.seek(skillAnimation.duration * event.progress!);
 })
 .setPin("#scene-3-skills")
-.addTo(controller);
-
-// scene 4
-new ScrollMagic.Scene({
-  triggerElement: "#scene-4",
-})
-.on("progress", (event) => {
-  console.log(event)
-  scene4Terminal.seek(scene4Terminal.duration * event.progress);
-})
-.setPin("#scene-4-box")
 .addTo(controller);
