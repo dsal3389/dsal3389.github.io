@@ -10,7 +10,7 @@
   }
 
   .skill-card {
-    @apply p-2;
+    @apply p-4;
     @apply border;
     @apply border-black;
     @apply overflow-hidden;
@@ -24,12 +24,22 @@
     @apply absolute;
     @apply w-[184px];
     @apply right-0;
-    @apply top-[-20px]
+    @apply top-[-15px]
   }
 
   .skill-card > img:hover {
     @apply opacity-100;
     @apply -rotate-[10deg];
+  }
+
+  .book {
+    @apply w-[249px];
+    @apply h-[340px];
+    @apply border;
+    @apply border-black;
+    @apply bg-cover;
+    @apply m-1;
+    @apply duration-200;
   }
 }
 
